@@ -1,14 +1,9 @@
-const express = require('express')
-const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth20').Strategy
-
-//cliendID === 645080786682-t5rfj2meokvvfuqhkpic8htk5qljv0b9.apps.googleusercontent.com
-//  cliendSecret === Wpbetugbi8Prwc7AWLrUYj-g
+const express = require('express');
+require('./services/passport');
 
 const app = express();
 
-
-passport.use(GoogleStrategy());
+require('./routes/authRoutes')(app)
 
 
 const port = process.env.PORT || 3000
